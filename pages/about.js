@@ -5,14 +5,10 @@ import fetch from "isomorphic-unfetch"
 
 export default class About extends Component {
 
-  static getInitialProps () {
-      fetch('https://api.github.com/users/reedbarger')
-        .then(res => res.json())
-        .then(data => {
-          console.log(data)
-        })
-
-        return { user: 'user'}
+  static async getInitialProps () {
+      const res = await fetch('https://api.github.com/users/reedbarger')
+      const data = await res.json()
+      return { user: data}
   }
 
   // componentDidMount () {
@@ -26,14 +22,13 @@ export default class About extends Component {
   // }
 
   render () {
+    const { user } = this.props
+
     return (
       <Layout title="About">
-        {/* {JSON.stringify(this.state.user)} */}
-        <Link href="/">
-          <a>Go home</a>
-        </Link>
-        <p>about kungpotato</p>
-        <img src="/static/test1.jpg"/>
+        {/* {JSON.stringify(this.props.user)} */}
+        <p>{user.name}</p>
+        <img src={user.avatar_url} alt="Me" height="200px"/>
       </Layout>
     )
   }
