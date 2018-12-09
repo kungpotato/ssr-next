@@ -1,9 +1,15 @@
-export default ({children}) => (
+import Link from "next/link"
+
+export default ({children, title}) => (
     <div>
-        <header>Header</header>
+        <header>
+            <Link href="/"><a>Home</a></Link>
+            <Link href="/about"><a>About</a></Link>
+            <Link href="/hireme"><a>Hire me</a></Link>
+        </header>
+            <h1>{title}</h1>
+            {children}
 
-        {children}
-
-        <footer>Footer</footer>
+        <footer>&copy; {new Date().getFullYear()}</footer>
     </div>
 )

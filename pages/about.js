@@ -1,13 +1,13 @@
 import Link from "next/link"
+import Layout from "../components/Layout"
 
 const About = () => (
-    <div>
-      <h1>About</h1>
+    <Layout title="About">
       <Link href="/">
         <a>Go home</a>
       </Link>
       <p>about kungpotato</p>
       <img src="/static/test1.jpg"/>
-    </div>
+    </Layout>
   )
   export default About
