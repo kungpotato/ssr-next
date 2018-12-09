@@ -28,7 +28,7 @@ export default class About extends Component {
     const { user, statusCode } = this.props
 
     if(statusCode) {
-      return <Error/>
+      return <Error statusCode={statusCode}/>
     }
 
     return (
