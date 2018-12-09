@@ -15,7 +15,7 @@ export default ({children, title}) => (
             .root{
                 display: flex;
                 justify-content: center;
-                align-item: center;
+                align-items: center;
                 flex-direction: column;
             }
             header{
