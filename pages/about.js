@@ -14,16 +14,6 @@ export default class About extends Component {
       return { user: data, statusCode}
   }
 
-  // componentDidMount () {
-  //   fetch('https://api.github.com/users/reedbarger')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         user: data
-  //       })
-  //     })
-  // }
-
   render () {
     const { user, statusCode } = this.props
 
